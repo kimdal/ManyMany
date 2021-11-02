@@ -12,6 +12,12 @@ class Mover {
     this.acc.add(f);
   }
 
+  attractTo(aPos){
+    let for = p5.Vector.sub(aPos, this.pos);
+    for.limit(3);
+    this.applyForce(for);
+  }
+
   update() {
     this.vel.add(this.acc);
     this.pos.add(this.vel);
